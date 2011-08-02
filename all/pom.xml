@@ -25,6 +25,7 @@
 		<project.build.level>1.6</project.build.level>
 	</properties>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
