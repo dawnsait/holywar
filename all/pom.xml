@@ -22,7 +22,6 @@
 	<properties>
 		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.level>1.6</project.build.level>
 	</properties>
 
@@ -180,6 +179,11 @@
 			<artifactId>guava</artifactId>
 			<version>r09</version>
 		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.googlecode.jmockit</groupId>
@@ -212,6 +216,13 @@
 				<configuration>
 					<source>${project.build.level}</source>
 					<target>${project.build.level}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
