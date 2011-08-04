@@ -23,6 +23,9 @@
 		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.level>1.6</project.build.level>
+		<compiler.plugin.version>2.3.2</compiler.plugin.version>
+		<resource.plugin.version>2.5</resource.plugin.version>
+		<surefire.plugin.version>2.9</surefire.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -213,6 +216,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler.plugin.version}</version>
 				<configuration>
 					<source>${project.build.level}</source>
 					<target>${project.build.level}</target>
@@ -221,6 +225,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
+				<version>${resource.plugin.version}</version>
 				<configuration>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
@@ -228,6 +233,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${surefire.plugin.version}</version>
 				<configuration>
 					<forkMode>once</forkMode>
 					<reportFormat>plain</reportFormat>
