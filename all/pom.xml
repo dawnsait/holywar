@@ -26,9 +26,21 @@
 		<compiler.plugin.version>2.3.2</compiler.plugin.version>
 		<resource.plugin.version>2.5</resource.plugin.version>
 		<surefire.plugin.version>2.9</surefire.plugin.version>
+		<slf4j.version>1.6.1</slf4j.version>
+		<logback.version>0.9.29</logback.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.18</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-lgpl</artifactId>
@@ -72,12 +84,17 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.6.1</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
-			<version>0.9.29</version>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
