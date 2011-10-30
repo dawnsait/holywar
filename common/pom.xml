@@ -9,9 +9,7 @@
 		<relativePath>../all</relativePath>
 	</parent>
 
-	<groupId>com.dawnsait.holywar</groupId>
 	<artifactId>common</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
 	<name>common</name>
 
 </project>
