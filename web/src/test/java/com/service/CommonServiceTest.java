@@ -35,7 +35,7 @@ import com.holywar.service.UserService;
  * @author lenovo 2011-10-31 上午1:01:46
  * 
  */
-@ContextConfiguration(locations = { "classpath:sys-config.xml" })
+@ContextConfiguration(locations = { "classpath:bean/sys-config.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
 @DirtiesContext
 public class CommonServiceTest {
@@ -54,7 +54,7 @@ public class CommonServiceTest {
 		user.setId(1);
 		user = userService.findUserById(user);
 		assertNotNull(user);
-		assertEquals("gosling", user.getName());
+		assertEquals("C.Ronaldo", user.getName());
 	}
 
 	@Test
