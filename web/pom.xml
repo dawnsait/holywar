@@ -60,6 +60,24 @@
 
 	<build>
 		<finalName>web</finalName>
+		<filters>
+			<filter>${user.home}/project.properties</filter>
+		</filters>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**.xml</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
@@ -91,6 +109,27 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<includes>
+								<include>WEB-INF/**.xml</include>
+							</includes>
+							<filtering>true</filtering>
+						</resource>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<excludes>
+								<include>WEB-INF/**.xml</include>
+							</excludes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
 </project>
