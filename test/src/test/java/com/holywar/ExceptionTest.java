@@ -16,7 +16,7 @@
 package com.holywar;
 
 /**
- * @author vongosling.fengj 2011-11-1 ионГ10:30:54
+ * @author vongosling.fengj 2011-11-1 10:30:54
  */
 public class ExceptionTest {
 

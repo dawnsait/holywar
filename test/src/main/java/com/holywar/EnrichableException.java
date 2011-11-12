@@ -20,7 +20,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 /**
- * @author vongosling.fengj 2011-11-1 ионГ10:21:35
+ * @author vongosling.fengj 2011-11-1 10:21:35
  */
 public class EnrichableException extends RuntimeException {
 

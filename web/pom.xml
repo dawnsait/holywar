@@ -60,6 +60,7 @@
 
 	<build>
 		<finalName>web</finalName>
+		<!--  
 		<filters>
 			<filter>${user.home}/project.properties</filter>
 		</filters>
@@ -78,6 +79,7 @@
 				</excludes>
 			</resource>
 		</resources>
+		-->
 		<plugins>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>

@@ -16,7 +16,7 @@
 package com.holywar;
 
 /**
- * @author vongosling.fengj 2011-11-1 ионГ10:18:49
+ * @author vongosling.fengj 2011-11-1 10:18:49
  */
 public interface ExceptionHandler {
 
