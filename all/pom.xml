@@ -27,7 +27,9 @@
 		<resource.plugin.version>2.5</resource.plugin.version>
 		<surefire.plugin.version>2.9</surefire.plugin.version>
 		<slf4j.version>1.6.1</slf4j.version>
-		<logback.version>0.9.29</logback.version>
+		<logback.version>1.0.0</logback.version>
+		<cobertura.report.format>xml</cobertura.report.format>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 	</properties>
 
 	<dependencies>
