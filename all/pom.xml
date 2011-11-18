@@ -20,16 +20,26 @@
 	</modules>
 
 	<properties>
-		<org.springframework.version>3.0.6.RELEASE</org.springframework.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.build.level>1.6</project.build.level>
+
+		<!-- maven plugin version -->
 		<compiler.plugin.version>2.3.2</compiler.plugin.version>
 		<resource.plugin.version>2.5</resource.plugin.version>
 		<surefire.plugin.version>2.9</surefire.plugin.version>
+		<findbugs.plugin.version>2.3.2</findbugs.plugin.version>
+		<surefire.plugin.version>2.10</surefire.plugin.version>
+		<cobertura.plugin.version>2.5.1</cobertura.plugin.version>
+
+		<findbugs.max.heap>1024</findbugs.max.heap>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.level>1.6</project.build.level>
+
+		<org.springframework.version>3.0.6.RELEASE</org.springframework.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<logback.version>1.0.0</logback.version>
 		<cobertura.report.format>xml</cobertura.report.format>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+
 	</properties>
 
 	<dependencies>
@@ -240,8 +250,16 @@
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
-
 		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.plugin.version}</version>
+				<configuration>
+					<sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+					<maxHeap>${findbugs.max.heap}</maxHeap>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -264,15 +282,35 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${surefire.plugin.version}</version>
 				<configuration>
-					<forkMode>once</forkMode>
+					<useSystemClassLoader>true</useSystemClassLoader>
+					<forkMode>always</forkMode>
 					<reportFormat>plain</reportFormat>
 					<testFailureIgnore>false</testFailureIgnore>
-					<parallel>classes</parallel>
+					<parallel>false</parallel>
 					<trimStackTrace>false</trimStackTrace>
 					<excludes>
 						<exclude>**/All*Test.java</exclude>
 						<exclude>**/Abstract*Test.java</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.alibaba.org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>${cobertura.plugin.version}</version>
+				<configuration>
+					<instrumentation>
+						<excludes>
+							<exclude>**/*Test.class</exclude>
+						</excludes>
+						<!--
+							<instrumentIncludeClass>instrument.include.txt</instrumentIncludeClass>
+							<instrumentExcludeClass>instrument.exclude.txt</instrumentExcludeClass>
+						-->
+					</instrumentation>
+					<formats>
+						<format>${cobertura.report.format}</format>
+					</formats>
 				</configuration>
 			</plugin>
 		</plugins>
