@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50517
 File Encoding         : 65001
 
-Date: 2011-12-07 01:40:34
+Date: 2011-12-09 01:05:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3266,8 +3266,8 @@ CREATE TABLE `evaluation` (
   `eval_user_id` varchar(15) NOT NULL,
   `msg_id` varchar(20) NOT NULL,
   `is_used` tinyint(4) NOT NULL,
-  `gmt_create` date NOT NULL,
-  `gmt_update` date NOT NULL,
+  `gmt_create` datetime NOT NULL,
+  `gmt_update` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `msg_and_eval_user` (`eval_user_id`,`msg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3301,8 +3301,8 @@ CREATE TABLE `message` (
   `min_latitude` double DEFAULT NULL,
   `max_longitude` double DEFAULT NULL,
   `max_latitude` double DEFAULT NULL,
-  `gmt_create` date NOT NULL,
-  `gmt_update` date NOT NULL,
+  `gmt_create` datetime NOT NULL,
+  `gmt_update` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `msg_id` (`msg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3318,8 +3318,8 @@ DROP TABLE IF EXISTS `msg_catogery`;
 CREATE TABLE `msg_catogery` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  `gmt_create` date NOT NULL,
-  `gmt_update` date NOT NULL,
+  `gmt_create` datetime NOT NULL,
+  `gmt_update` datetime NOT NULL,
   `parent_id` int(11) NOT NULL,
   `default_expire_time` int(11) NOT NULL,
   `description` varchar(200) DEFAULT NULL,
@@ -3344,8 +3344,8 @@ CREATE TABLE `partner_user` (
   `version` varchar(6) DEFAULT NULL,
   `access_token` varchar(256) DEFAULT NULL,
   `refresh_token` varchar(256) DEFAULT NULL,
-  `gmt_create` date NOT NULL,
-  `gmt_update` date NOT NULL,
+  `gmt_create` datetime NOT NULL,
+  `gmt_update` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `type_and_partner_user` (`type`,`partner_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3410,8 +3410,8 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` varchar(15) NOT NULL,
-  `gmt_create` date NOT NULL,
-  `gmt_update` date NOT NULL,
+  `gmt_create` datetime NOT NULL,
+  `gmt_update` datetime NOT NULL,
   `user_name` varchar(20) NOT NULL,
   `nick_name` varchar(40) NOT NULL,
   `password` varchar(40) NOT NULL,
@@ -3419,17 +3419,17 @@ CREATE TABLE `user` (
   `real_name` varchar(10) DEFAULT NULL,
   `first_name` varchar(20) DEFAULT NULL,
   `last_name` varchar(20) DEFAULT NULL,
-  `portrait` varchar(100) NOT NULL,
-  `mobile` varchar(20) DEFAULT NULL,
+  `portrait` varchar(100) DEFAULT NULL,
+  `mobile` varchar(20) NOT NULL,
   `telephone` varchar(20) DEFAULT NULL,
   `status` varchar(10) NOT NULL,
   `is_deleted` tinyint(4) NOT NULL,
-  `score` int(11) NOT NULL,
+  `score` int(11) NOT NULL DEFAULT '0',
   `degrade` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `user_id` (`user_id`),
   UNIQUE KEY `user_name` (`user_name`),
   UNIQUE KEY `nick_name` (`nick_name`),
+  UNIQUE KEY `user_id` (`user_id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -3450,8 +3450,8 @@ CREATE TABLE `user_address` (
   `district_id` int(11) NOT NULL,
   `zip_code` varchar(15) DEFAULT NULL,
   `address_detail` varchar(500) NOT NULL,
-  `gmt_create` date NOT NULL,
-  `gmt_update` date NOT NULL,
+  `gmt_create` datetime NOT NULL,
+  `gmt_update` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -3467,8 +3467,8 @@ CREATE TABLE `user_catogery_concern` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` varchar(15) NOT NULL,
   `msg_catogery_id` int(11) NOT NULL,
-  `gmt_create` date NOT NULL,
-  `gmt_update` date NOT NULL,
+  `gmt_create` datetime NOT NULL,
+  `gmt_update` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_and_msg_catogery` (`user_id`,`msg_catogery_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3490,8 +3490,8 @@ CREATE TABLE `user_region_conern` (
   `min_latitude` double DEFAULT NULL,
   `max_longitude` double DEFAULT NULL,
   `max_latitude` double DEFAULT NULL,
-  `gmt_create` date NOT NULL,
-  `gmt_update` date NOT NULL,
+  `gmt_create` datetime NOT NULL,
+  `gmt_update` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
