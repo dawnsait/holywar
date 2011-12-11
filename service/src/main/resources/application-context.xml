@@ -23,29 +23,52 @@
 		<property name="username" value="root" />
 		<property name="password" value="123" />
 	</bean>
-	
+
 	<!-- transaction manager, use JtaTransactionManager for global tx -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
-    </bean>
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
-    <!-- enable component scanning (beware that this does not enable mapper scanning!)
-    <context:component-scan base-package="org.mybatis.jpetstore.service" /> -->    
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/plain;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- enable autowire -->
+	<context:annotation-config />
 
-    <!-- enable autowire -->
-    <context:annotation-config />
+	<!-- enable transaction demarcation with annotations -->
+	<tx:annotation-driven />
 
-    <!-- enable transaction demarcation with annotations -->
-    <tx:annotation-driven />
+	<!-- define the SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="typeAliasesPackage" value="org.fasheng.model" />
+	</bean>
 
-    <!-- define the SqlSessionFactory -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="typeAliasesPackage" value="org.fasheng.model" />
-    </bean>
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.fasheng.dao" />
+	</bean>
 
-    <!-- scan for mappers and let them be autowired -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.fasheng.dao" />
-    </bean>
+	<context:component-scan base-package="com.fasheng.service"
+		use-default-filters="false">
+		<context:include-filter type="regex"
+			expression="com.fasheng.service.impl..*" />
+		<context:include-filter type="regex"
+			expression="com.fasheng.service.util..*" />
+	</context:component-scan>
 </beans>

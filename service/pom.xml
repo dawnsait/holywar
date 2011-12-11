@@ -14,6 +14,13 @@
 	<name>service</name>
 	<version>1.0.0</version>
 	
+	<repositories>
+		<repository>
+			<id>fastjson</id>
+			<name>fast json</name>
+			<url>http://code.alibabatech.com/mvn/releases/</url>
+		</repository>
+	</repositories>
 	
 	<properties>
 		<spring.version>3.0.6.RELEASE</spring.version>
@@ -71,6 +78,12 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.18</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.9</version>
 		</dependency>
 	</dependencies>
 </project>
