@@ -1,7 +1,9 @@
 package com.fasheng.dto;
 
 public class ProvinceDTO extends BaseDTO {
-    private Integer id;
+	private static final long serialVersionUID = -6171494285549722542L;
+
+	private Integer id;
 
     private String provinceName;
 

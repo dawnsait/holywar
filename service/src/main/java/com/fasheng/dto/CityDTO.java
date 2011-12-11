@@ -1,7 +1,9 @@
 package com.fasheng.dto;
 
 public class CityDTO extends BaseDTO {
-    private Integer id;
+	private static final long serialVersionUID = -1696160617436411043L;
+
+	private Integer id;
 
     private String cityName;
 
