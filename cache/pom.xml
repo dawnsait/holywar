@@ -8,10 +8,10 @@
 		<version>1.0.0</version>
 		<relativePath>../all</relativePath>
 	</parent>
-
+	
 	<groupId>com.fasheng</groupId>
-	<artifactId>test</artifactId>
-	<name>test</name>
+	<artifactId>cache</artifactId>
+	<name>cache</name>
 	<version>1.0.0</version>
 
 </project>
