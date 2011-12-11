@@ -28,6 +28,7 @@
 		<findbugs.plugin.version>2.3.2</findbugs.plugin.version>
 		<surefire.plugin.version>2.10</surefire.plugin.version>
 		<cobertura.plugin.version>2.5.1</cobertura.plugin.version>
+		<war.plugin.version>2.1.1</war.plugin.version>
 
 		<findbugs.max.heap>1024</findbugs.max.heap>
 
@@ -39,7 +40,8 @@
 		<logback.version>1.0.0</logback.version>
 		<cobertura.report.format>xml</cobertura.report.format>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-
+		
+		<jetty-version>6.1.22</jetty-version>
 	</properties>
 
 	<dependencies>
