@@ -6,7 +6,7 @@
 		<groupId>com.fasheng</groupId>
 		<artifactId>all</artifactId>
 		<version>1.0.0</version>
-		<relativePath>../all/pom.xml</relativePath>
+		<relativePath>../all</relativePath>
 	</parent>
 
 	<artifactId>mq</artifactId>
