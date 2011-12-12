@@ -9,7 +9,6 @@
 		<relativePath>../all</relativePath>
 	</parent>
 	
-	<groupId>com.fasheng</groupId>
 	<artifactId>cache</artifactId>
 	<name>cache</name>
 	<version>1.0.0</version>

@@ -6,12 +6,19 @@
 		<groupId>com.fasheng</groupId>
 		<artifactId>all</artifactId>
 		<version>1.0.0</version>
-		<relativePath>../all</relativePath>
+		<relativePath>../all/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.fasheng</groupId>
 	<artifactId>mq</artifactId>
 	<name>mq</name>
 	<version>1.0.0</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.rabbitmq</groupId>
+			<artifactId>amqp-client</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+	</dependencies>
 
 </project>
