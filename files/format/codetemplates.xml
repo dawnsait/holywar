@@ -10,14 +10,9 @@
  * File Created at ${date}
  * $$Id$$
  * 
- * Copyright 2008 Alibaba.com Croporation Limited.
+ * Copyright 2011 FashengOL Croporation Limited.
  * All rights reserved.
  *
- * This software is the confidential and proprietary information of
- * Alibaba Company. ("Confidential Information").  You shall not
- * disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license agreement you entered into
- * with Alibaba.com.
  */</template><template autoinsert="false" context="typecomment_context" deleted="false" description="Comment for created types" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment">/**
  * ${todo} Comment of ${type_name}
  * @author ${user}
