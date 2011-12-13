@@ -3294,7 +3294,7 @@ CREATE TABLE `message` (
   `attach_file` varchar(50) DEFAULT NULL,
   `is_expired` tinyint(4) NOT NULL,
   `deleted_status` tinyint(4) NOT NULL,
-  `expire_date` date NOT NULL,
+  `expire_date` datetime NOT NULL,
   `region_type` varchar(20) NOT NULL,
   `region_id` int(11) DEFAULT NULL,
   `min_longitude` double DEFAULT NULL,
