@@ -1,5 +1,6 @@
 package com.fasheng.service.interfaces;
 
+import com.fasheng.dto.UserDTO;
 import com.fasheng.model.UserDO;
 
 public interface UserService {
@@ -7,7 +8,7 @@ public interface UserService {
 	
 	int insert(UserDO record);
 	
-	UserDO selectByPrimaryKey(Integer id);
+	UserDTO selectByPrimaryKey(Integer id);
 	
 	int updateByPrimaryKey(UserDO record);
 }

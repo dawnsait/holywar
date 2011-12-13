@@ -2,16 +2,17 @@ package com.fasheng.service.interfaces;
 
 import java.util.List;
 
-import com.fasheng.model.CityDO;
+import com.fasheng.dto.CityDTO;
+
 
 public interface CityService {
-	public CityDO getCityDO(Integer id);
+	public CityDTO getCityDTO(Integer id);
 	
 	/**
 	 * get all cities.
 	 * @return
 	 */
-	public List<CityDO> getAllCities();
+	public List<CityDTO> getAllCities();
 	
-	public List<Integer> getCityIdsByCityId(Integer cityId);
+	public List<Integer> getCityIdsByProvinceId(Integer cityId);
 }

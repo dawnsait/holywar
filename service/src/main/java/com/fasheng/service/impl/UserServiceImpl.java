@@ -1,15 +1,14 @@
 package com.fasheng.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
 
 import com.fasheng.dao.UserDAO;
+import com.fasheng.dto.UserDTO;
 import com.fasheng.model.UserDO;
 import com.fasheng.service.interfaces.UserService;
 
-@Component("userService")
-@Transactional 
+@Service("userService")
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
@@ -26,8 +25,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDO selectByPrimaryKey(Integer id) {
-		return userDAO.selectByPrimaryKey(id);
+	public UserDTO selectByPrimaryKey(Integer id) {
+		UserDO userDO = userDAO.selectByPrimaryKey(id);
+		UserDTO userDTO = new UserDTO();
+		return userDTO;
 	}
 
 	@Override
