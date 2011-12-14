@@ -16,17 +16,17 @@ import com.fasheng.service.interfaces.ProvinceService;
 @Controller
 @RequestMapping("/location")
 public class LocationController {
-	@RequestMapping("/test1")  
-	@ResponseBody  
-	public String testRest(ModelMap model){
-		ProvinceService provinceService = DataServiceLocator.getProvinceService();
-		List<ProvinceDTO> provinceList = provinceService.getAllProvinces();
-		return JSON.toJSONString(provinceList);  
-	}
-	
-	@RequestMapping("/test2")  
-	@ResponseBody  
-	public String testRest(@RequestParam("code") String code, ModelMap model){
-	    return "code=" + code;  
-	}
+    @RequestMapping("/test1")
+    @ResponseBody
+    public String testRest(ModelMap model) {
+        ProvinceService provinceService = DataServiceLocator.getProvinceService();
+        List<ProvinceDTO> provinceList = provinceService.getAllProvinces();
+        return JSON.toJSONString(provinceList);
+    }
+
+    @RequestMapping("/test2")
+    @ResponseBody
+    public String testRest(@RequestParam("code") String code, ModelMap model) {
+        return "code=" + code;
+    }
 }

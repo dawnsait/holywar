@@ -1,0 +1,93 @@
+#detail {
+	width:98%;
+	height:500px;
+	background:url(../img/detail_bg.jpg) repeat #ccc;
+	position:relative;
+	float:left;
+}
+.send_msg {
+	width: 540px;
+	position: relative;
+	margin-bottom: 5px;
+	float:left;
+}
+.send_msg .title {
+	background-image: url(../img/send_msg.png);
+	padding-left: 12px;
+	width: 240px;
+	height: 24px;
+}
+.send_msg .input .top_border {
+	background-image: url(../img/send_msg.png);
+	width: 540px;
+	padding: 5px 0 0;
+	background-position: -3px -30px;
+	margin: 7px 0 3px;
+	position: relative;
+}
+.send_msg .input .bottom_border {
+	background-image: url(../img/send_msg.png);
+	width: 540px;
+	background-position: -3px bottom;
+	padding-bottom: 5px;
+}
+.send_msg .input textarea {
+	box-shadow: inset 0 0 0 #fff;
+	-moz-box-shadow: inset 0 0 0 #fff;
+	-webkit-box-shadow: inset 0 0 0 #fff;
+	background: white;
+	border: 1px solid white;
+	overflow-x: hidden;
+	overflow-y: auto;
+	width: 530px;
+	margin: 0 0 0 5px;
+	height: 55px;
+	font-size: 14px;
+	line-height: 18px;
+	font-family: Tahoma, "SimSun";
+	white-space: pre-wrap;
+	resize:none;
+	outline:none;
+}
+.send_msg .btn {
+	float: right;
+	padding: 0;
+}
+.send_msg .btn a {
+	background-image: url(../img/send_msg.png);
+	border: 0;
+	width: 70px;
+	height: 28px;
+	background-position: -473px -1px;
+	display: block;
+}
+.send_msg .kind {
+	padding: 5px 0 25px 0;
+	display: block;
+}
+.send_msg .kind .img {
+	background-position: 0 -32px;
+}
+.send_msg .kind .face {
+	background-position: 0 1px;
+}
+.send_msg .kind a {
+	margin: 0 15px 0 5px;
+	display: inline-block;
+	height: 14px;
+	padding: 2px 0 2px 19px;
+	line-height: 14px;
+	background: url(../img/ico.png) no-repeat;
+	color: #9ABBC8;
+	text-decoration: none;
+}
+.googleMap {
+	margin-top:80px;
+	margin-left:20px;
+	width:40%;
+	height: 400px;
+	background-color: rgb(229, 227, 223);
+	overflow: hidden;
+	float:left;
+	opacity:0.7;
+}
