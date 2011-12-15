@@ -10,11 +10,17 @@
  */
 package com.fasheng.user;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.fastjson.JSON;
+import com.fasheng.dto.UserDTO;
 
 /**
  * TODO Comment of UserController
@@ -29,8 +35,17 @@ public class UserController {
 
     @RequestMapping("/register")
     @ResponseBody
-    public String testRest(@RequestParam("email") String email,
+    public String register(@RequestParam("email") String email,
                            @RequestParam("password") String password, ModelMap model) {
-        return "email is " + email + "\n" + "password is " + password;
+        
+        UserDTO userDTO = new UserDTO();
+        userDTO.setEmail(email);
+        
+        Map<String,Object> resultMap=new HashMap<String,Object>();
+        resultMap.put("isSuccess", "true");
+        resultMap.put("user", userDTO);
+        
+        return JSON.toJSONString(resultMap);  
+
     }
 }
