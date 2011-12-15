@@ -1,6 +1,5 @@
 package com.fasheng.map.utils;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 import org.apache.commons.lang.StringUtils;
@@ -19,6 +18,7 @@ public class HttpCilentUtils {
         HttpResponse response = null;
         String responseContent = StringUtils.EMPTY;
         HttpEntity entity = null;
+
         try {
             HttpGet httpget = new HttpGet(url);
 
@@ -43,7 +43,7 @@ public class HttpCilentUtils {
 
     }
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
+    public static void main(String[] args) throws Exception {
 
         String charset = "UTF-8";
 
