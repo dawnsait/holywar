@@ -11,7 +11,7 @@ public class BaseResponse {
     protected Integer code;
     
     /** 如果是error code, message为错误信息 */
-    protected String message;
+    protected String msg;
 
     public Integer getCode() {
         return code;
@@ -21,12 +21,12 @@ public class BaseResponse {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
     
 }
