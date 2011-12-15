@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
+import com.fasheng.constant.ResponseCodeEnum;
 import com.fasheng.dto.UserDTO;
+import com.fasheng.response.user.UserRegisterResponse;
 
 /**
  * TODO Comment of UserController
@@ -38,14 +40,11 @@ public class UserController {
     public String register(@RequestParam("email") String email,
                            @RequestParam("password") String password, ModelMap model) {
         
-        UserDTO userDTO = new UserDTO();
-        userDTO.setEmail(email);
+        UserRegisterResponse userRegisterResponse = new UserRegisterResponse();
+        userRegisterResponse.setCode(ResponseCodeEnum.SUCCESS.getCode());
+        userRegisterResponse.setUserName(email);
         
-        Map<String,Object> resultMap=new HashMap<String,Object>();
-        resultMap.put("isSuccess", "true");
-        resultMap.put("user", userDTO);
-        
-        return JSON.toJSONString(resultMap);  
+        return JSON.toJSONString(userRegisterResponse);  
 
     }
 }

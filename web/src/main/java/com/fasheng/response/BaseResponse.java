@@ -1,12 +1,12 @@
-package com.fasheng.dto.respone;
+package com.fasheng.response;
 
 /**
  * 服务端api返回基类
- * TODO Comment of BaseResponseDTO
+ * TODO Comment of BaseResponse
  * @author julien.min
  *
  */
-public class BaseResponseDTO {
+public class BaseResponse {
     /** 返回状态码 */
     protected Integer code;
     
