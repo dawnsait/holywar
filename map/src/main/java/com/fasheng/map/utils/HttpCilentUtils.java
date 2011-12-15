@@ -2,7 +2,8 @@ package com.fasheng.map.utils;
 
 import java.net.URLEncoder;
 
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
