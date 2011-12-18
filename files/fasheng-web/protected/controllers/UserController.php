@@ -1,5 +1,5 @@
 <?php
-class LoginController extends Controller {
+class UserController extends Controller {
 	/**
 	 * Declares class-based actions.
 	 */
@@ -49,6 +49,25 @@ class LoginController extends Controller {
 		self :: setAuthUrl();
 
 		$this->render('login', array (
+			'model' => $model
+		));
+	}
+
+	/**
+	 * Display register page
+	 */
+	public function actionRegister() {
+
+		$model = new RegisterForm;
+		if (isset ($_POST['RegisterForm'])) {
+			$model->attributes = $_POST['RegisterForm'];
+			if ($model->validate()) {
+				$model->register();
+				//var_dump($model);
+				//$this->redirect(Yii::app()->user->returnUrl);
+			}
+		}
+		$this->render('register', array (
 			'model' => $model
 		));
 	}
