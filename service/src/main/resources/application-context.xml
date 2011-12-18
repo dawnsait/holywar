@@ -56,19 +56,19 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
-		<property name="typeAliasesPackage" value="org.fasheng.model" />
+		<property name="typeAliasesPackage" value="org.fasheng.service.model" />
 	</bean>
 
 	<!-- scan for mappers and let them be autowired -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.fasheng.dao" />
+		<property name="basePackage" value="com.fasheng.service.dao" />
 	</bean>
 
-	<context:component-scan base-package="com.fasheng"
+	<context:component-scan base-package="com.fasheng.service.service"
 		use-default-filters="false">
 		<context:include-filter type="regex"
-			expression="com.fasheng.service.impl..*" />
+			expression="com.fasheng.service.service.impl..*" />
 		<context:include-filter type="regex"
-			expression="com.fasheng.service.util..*" />
+			expression="com.fasheng.service.service.util..*" />
 	</context:component-scan>
 </beans>

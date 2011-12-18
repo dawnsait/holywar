@@ -2,16 +2,16 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="CityDO" type="com.fasheng.model.CityDO"/>
-		<typeAlias alias="DistrictDO" type="com.fasheng.model.DistrictDO"/>
-		<typeAlias alias="EvaluationDO" type="com.fasheng.model.EvaluationDO"/>
-		<typeAlias alias="MessageDO" type="com.fasheng.model.MessageDO"/>
-		<typeAlias alias="MsgCatogeryDO" type="com.fasheng.model.MsgCatogeryDO"/>
-		<typeAlias alias="PartnerUserDO" type="com.fasheng.model.PartnerUserDO"/>
-		<typeAlias alias="ProvinceDO" type="com.fasheng.model.ProvinceDO"/>
-		<typeAlias alias="UserAddressDO" type="com.fasheng.model.UserAddressDO"/>
-		<typeAlias alias="UserCatogeryConcernDO" type="com.fasheng.model.UserCatogeryConcernDO"/>
-		<typeAlias alias="UserDO" type="com.fasheng.model.UserDO"/>
-		<typeAlias alias="UserRegionConcernDO" type="com.fasheng.model.UserRegionConcernDO"/>
+		<typeAlias alias="CityDO" type="com.fasheng.service.model.CityDO"/>
+		<typeAlias alias="DistrictDO" type="com.fasheng.service.model.DistrictDO"/>
+		<typeAlias alias="EvaluationDO" type="com.fasheng.service.model.EvaluationDO"/>
+		<typeAlias alias="MessageDO" type="com.fasheng.service.model.MessageDO"/>
+		<typeAlias alias="MsgCatogeryDO" type="com.fasheng.service.model.MsgCatogeryDO"/>
+		<typeAlias alias="PartnerUserDO" type="com.fasheng.service.model.PartnerUserDO"/>
+		<typeAlias alias="ProvinceDO" type="com.fasheng.service.model.ProvinceDO"/>
+		<typeAlias alias="UserAddressDO" type="com.fasheng.service.model.UserAddressDO"/>
+		<typeAlias alias="UserCatogeryConcernDO" type="com.fasheng.service.model.UserCatogeryConcernDO"/>
+		<typeAlias alias="UserDO" type="com.fasheng.service.model.UserDO"/>
+		<typeAlias alias="UserRegionConcernDO" type="com.fasheng.service.model.UserRegionConcernDO"/>
 	</typeAliases>
 </configuration>	
