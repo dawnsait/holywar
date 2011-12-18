@@ -26,10 +26,10 @@ class LoginController extends Controller {
 	 * Display login page
 	 */
 	public function actionLogin() {
-		$provinces = Provinces :: model()->findAll();
-		foreach ($provinces as $province) {
-			echo $province->name . "<br/>";
-		}
+//		$provinces = Provinces :: model()->findAll();
+//		foreach ($provinces as $province) {
+//			echo $province->name . "<br/>";
+//		}
 		$identity = new UserIdentity("admin", "admin");
 		if ($identity->authenticate())
 			Yii :: app()->user->login($identity);

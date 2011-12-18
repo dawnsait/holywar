@@ -178,3 +178,19 @@ Stack trace:
 #9 E:\phpproject\swapweb\index.php(17): CWebApplication->run()
 REQUEST_URI=/swapweb/
 in E:\phpproject\swapweb\index.php (17)
+2011/12/15 17:29:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loginl".' in E:\phpproject\yii\framework\web\CController.php:477
+Stack trace:
+#0 E:\phpproject\yii\framework\web\CController.php(262): CController->missingAction('loginl')
+#1 E:\phpproject\yii\framework\web\CWebApplication.php(277): CController->run('loginl')
+#2 E:\phpproject\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('login/loginl')
+#3 E:\phpproject\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 E:\phpproject\fasheng-web\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/login/loginl
+2011/12/18 02:32:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in E:\phpproject\yii\framework\web\CController.php:477
+Stack trace:
+#0 E:\phpproject\yii\framework\web\CController.php(262): CController->missingAction('')
+#1 E:\phpproject\yii\framework\web\CWebApplication.php(277): CController->run('')
+#2 E:\phpproject\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('login')
+#3 E:\phpproject\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 E:\phpproject\fasheng-web\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/login
