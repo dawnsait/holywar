@@ -194,3 +194,537 @@ Stack trace:
 #3 E:\phpproject\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
 #4 E:\phpproject\fasheng-web\index.php(17): CApplication->run()
 #5 {main} REQUEST_URI=/fasheng-web/login
+2011/12/18 06:15:05 [error] [php] include(LoginForm.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (F:\myProject\project\holywar\files\yii\framework\YiiBase.php:421)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\LoginController.php(36): spl_autoload_call()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): LoginController->actionLogin()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): LoginController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): LoginController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): LoginController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CWebApplication->run()
+REQUEST_URI=/fasheng-web/login/login
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\LoginController.php (36)
+in F:\myProject\project\holywar\files\fasheng-web\index.php (17)
+2011/12/18 06:35:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/login".' in F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php:281
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/login')
+#1 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#2 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#3 {main} REQUEST_URI=/fasheng-web/user/login
+2011/12/18 06:37:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "register".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('register')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 06:39:29 [error] [exception.CException] exception 'CException' with message 'Property "CEmailValidator.0" is not defined.' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\validators\CValidator.php(169): CComponent->__set('0', 'required')
+#1 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(283): CValidator::createValidator('email', Object(RegisterForm), 'username, passw...', Array)
+#2 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(257): CModel->createValidators()
+#3 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(301): CModel->getValidators('username')
+#4 F:\myProject\project\holywar\files\yii\framework\web\helpers\CHtml.php(1179): CModel->isAttributeRequired('username')
+#5 F:\myProject\project\holywar\files\yii\framework\web\widgets\CActiveForm.php(553): CHtml::activeLabelEx(Object(RegisterForm), 'username', Array)
+#6 F:\myProject\project\holywar\files\fasheng-web\protected\views\user\register.php(26): CActiveForm->labelEx(Object(RegisterForm), 'username')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CBaseController.php(119): require('F:\myProject\pr...')
+#8 F:\myProject\project\holywar\files\yii\framework\web\CBaseController.php(88): CBaseController->renderInternal('F:\myProject\pr...', Array, true)
+#9 F:\myProject\project\holywar\files\yii\framework\web\CController.php(866): CBaseController->renderFile('F:\myProject\pr...', Array, true)
+#10 F:\myProject\project\holywar\files\yii\framework\web\CController.php(779): CController->renderPartial('register', Array, true)
+#11 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(84): CController->render('register', Array)
+#12 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#13 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#14 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#15 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#17 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#18 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#19 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#20 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 06:40:09 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "register".' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:269
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CComponent->__call('register', Array)
+#1 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CWebUser->register(Object(UserIdentity))
+#2 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#5 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#8 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#9 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#10 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 06:40:15 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "register".' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:269
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CComponent->__call('register', Array)
+#1 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CWebUser->register(Object(UserIdentity))
+#2 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#5 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#8 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#9 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#10 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 06:40:56 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "register".' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:269
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CComponent->__call('register', Array)
+#1 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CWebUser->register(Object(UserIdentity))
+#2 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#5 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#8 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#9 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#10 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 06:43:32 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "register".' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:269
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CComponent->__call('register', Array)
+#1 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CWebUser->register()
+#2 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#5 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#8 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#9 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#10 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 06:44:51 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "register".' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:269
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CComponent->__call('register', Array)
+#1 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(62): CWebUser->register(Object(UserIdentity))
+#2 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#5 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#8 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#9 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#10 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 07:11:30 [error] [exception.CException] exception 'CException' with message 'Property "CEmailValidator.0" is not defined.' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\validators\CValidator.php(169): CComponent->__set('0', 'confirm_passwor...')
+#1 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(283): CValidator::createValidator('email', Object(RegisterForm), 'username, passw...', Array)
+#2 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(257): CModel->createValidators()
+#3 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(301): CModel->getValidators('username')
+#4 F:\myProject\project\holywar\files\yii\framework\web\helpers\CHtml.php(1179): CModel->isAttributeRequired('username')
+#5 F:\myProject\project\holywar\files\yii\framework\web\widgets\CActiveForm.php(553): CHtml::activeLabelEx(Object(RegisterForm), 'username', Array)
+#6 F:\myProject\project\holywar\files\fasheng-web\protected\views\user\register.php(26): CActiveForm->labelEx(Object(RegisterForm), 'username')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CBaseController.php(119): require('F:\myProject\pr...')
+#8 F:\myProject\project\holywar\files\yii\framework\web\CBaseController.php(88): CBaseController->renderInternal('F:\myProject\pr...', Array, true)
+#9 F:\myProject\project\holywar\files\yii\framework\web\CController.php(866): CBaseController->renderFile('F:\myProject\pr...', Array, true)
+#10 F:\myProject\project\holywar\files\yii\framework\web\CController.php(779): CController->renderPartial('register', Array, true)
+#11 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(70): CController->render('register', Array)
+#12 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#13 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#14 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#15 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#17 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#18 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#19 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#20 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 07:12:09 [error] [php] include(authenticate.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (F:\myProject\project\holywar\files\yii\framework\YiiBase.php:421)
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\validators\CValidator.php(166): import()
+#1 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(283): createValidator()
+#2 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(257): RegisterForm->createValidators()
+#3 F:\myProject\project\holywar\files\yii\framework\base\CModel.php(301): RegisterForm->getValidators()
+#4 F:\myProject\project\holywar\files\yii\framework\web\helpers\CHtml.php(1179): RegisterForm->isAttributeRequired()
+#5 F:\myProject\project\holywar\files\yii\framework\web\widgets\CActiveForm.php(553): activeLabelEx()
+#6 F:\myProject\project\holywar\files\fasheng-web\protected\views\user\register.php(26): CActiveForm->labelEx()
+#7 F:\myProject\project\holywar\files\yii\framework\web\CBaseController.php(119): require()
+#8 F:\myProject\project\holywar\files\yii\framework\web\CBaseController.php(88): UserController->renderInternal()
+#9 F:\myProject\project\holywar\files\yii\framework\web\CController.php(866): UserController->renderFile()
+#10 F:\myProject\project\holywar\files\yii\framework\web\CController.php(779): UserController->renderPartial()
+#11 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(70): UserController->render()
+#12 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#13 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#14 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#15 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#16 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#17 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#18 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#19 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\views\user\register.php (26)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (70)
+in F:\myProject\project\holywar\files\fasheng-web\index.php (17)
+2011/12/18 07:39:22 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "register".' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:269
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): CComponent->__call('register', Array)
+#1 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): CWebUser->register()
+#2 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#5 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#8 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#9 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#10 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 07:41:05 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "register".' in F:\myProject\project\holywar\files\yii\framework\base\CComponent.php:269
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): CComponent->__call('register', Array)
+#1 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): CWebUser->register()
+#2 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#5 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('register')
+#7 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/register')
+#8 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#9 F:\myProject\project\holywar\files\fasheng-web\index.php(17): CApplication->run()
+#10 {main} REQUEST_URI=/fasheng-web/user/register
+2011/12/18 08:16:35 [error] [php] file_get_contents(www.baidu.com) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:15)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (15)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (37)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 08:23:10 [error] [php] file_get_contents(www.baidu.com/s) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:15)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (15)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (37)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 08:24:14 [error] [php] file_get_contents(www.baidu.com/s) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:17)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (17)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (37)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 08:28:36 [error] [php] file_get_contents(www.baidu.com/s) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:17)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (17)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (37)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 08:31:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:33:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:34:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:35:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:35:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:40:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:47:13 [error] [php] file_get_contents(http://www.google.com.tw/search) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.0 405 Method Not Allowed
+ (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:14)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (14)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (37)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 08:47:53 [error] [php] file_get_contents(http://www.google.com.tw/search) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.0 405 Method Not Allowed
+ (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:14)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (14)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (37)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 08:48:40 [error] [php] file_get_contents(http://www.google.com.tw/search) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+ (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:14)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (14)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (37)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 08:49:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:54:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:54:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:55:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in F:\myProject\project\holywar\files\yii\framework\web\CController.php:477
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(262): CController->missingAction('img')
+#1 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): CController->run('img')
+#2 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController('user/img/logo.g...')
+#3 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#4 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CApplication->run()
+#5 {main} REQUEST_URI=/fasheng-web/user/img/logo.gif
+2011/12/18 08:58:30 [error] [php] file_get_contents(http://192.168.1.101:8080/web/user/register) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.1 405 Request method 'POST' not supported
+ (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:16)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (16)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (37)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 09:03:52 [error] [php] Undefined variable: username (F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php:36)
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#1 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#5 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#6 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (36)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+in F:\myProject\project\holywar\files\fasheng-web\index.php (20)
+2011/12/18 09:04:24 [error] [php] Undefined variable: username (F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php:36)
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#1 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#5 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#6 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (36)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+in F:\myProject\project\holywar\files\fasheng-web\index.php (20)
+2011/12/18 09:15:20 [error] [php] Use of undefined constant userRegisterParam - assumed 'userRegisterParam' (F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php:40)
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#1 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#5 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#6 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (40)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+in F:\myProject\project\holywar\files\fasheng-web\index.php (20)
+2011/12/18 09:18:42 [error] [php] Use of undefined constant userRegisterParam - assumed 'userRegisterParam' (F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php:38)
+Stack trace:
+#0 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#1 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#5 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#6 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (38)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+in F:\myProject\project\holywar\files\fasheng-web\index.php (20)
+2011/12/18 09:20:05 [error] [php] file_get_contents(http://192.168.1.101:8080/web/location/test2) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:16)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (16)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (41)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 09:21:08 [error] [php] file_get_contents(http://192.168.1.101:8080/web/location/test2) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:16)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (16)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (41)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 09:22:35 [error] [php] file_get_contents(http://192.168.1.101:8080/web/user/register) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:16)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (16)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (41)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 09:22:59 [error] [php] file_get_contents(http://192.168.1.101:8080/web/user/register) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+ (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:16)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (16)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (41)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
+2011/12/18 09:24:07 [error] [php] file_get_contents(http://192.168.1.101:8080/web/user/register) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.1 500   ### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException (F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php:16)
+Stack trace:
+#0 F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php(65): RegisterForm->register()
+#1 F:\myProject\project\holywar\files\yii\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#2 F:\myProject\project\holywar\files\yii\framework\web\CController.php(300): CInlineAction->runWithParams()
+#3 F:\myProject\project\holywar\files\yii\framework\web\CController.php(278): UserController->runAction()
+#4 F:\myProject\project\holywar\files\yii\framework\web\CController.php(257): UserController->runActionWithFilters()
+#5 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(277): UserController->run()
+#6 F:\myProject\project\holywar\files\yii\framework\web\CWebApplication.php(136): CWebApplication->runController()
+#7 F:\myProject\project\holywar\files\yii\framework\base\CApplication.php(158): CWebApplication->processRequest()
+#8 F:\myProject\project\holywar\files\fasheng-web\index.php(20): CWebApplication->run()
+REQUEST_URI=/fasheng-web/user/register
+in F:\myProject\project\holywar\files\fasheng-web\protected\GlobalFunction.php (16)
+in F:\myProject\project\holywar\files\fasheng-web\protected\models\RegisterForm.php (41)
+in F:\myProject\project\holywar\files\fasheng-web\protected\controllers\UserController.php (65)
