@@ -19,11 +19,13 @@
 	<tx:annotation-driven />
 
 	<!-- just for junit test -->
+	<!-- 
 	<jdbc:initialize-database>
 		<jdbc:script location="db/database-schema.sql" />
 		<jdbc:script location="db/database-test-data.sql" />
 	</jdbc:initialize-database>
-
+	 -->
+	 
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
@@ -46,12 +48,16 @@
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation" value="classpath:sqlmap-config.xml" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="typeAliasesPackage" value="org.fasheng.service.model" />
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.fasheng.service.dao" />
 	</bean>
 
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
-
 
 </beans>

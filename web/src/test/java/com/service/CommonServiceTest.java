@@ -16,61 +16,55 @@
  */
 package com.service;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import javax.annotation.Resource;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.test.annotation.DirtiesContext;
+import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.holywar.model.User;
-import com.holywar.service.UserService;
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.joran.JoranConfigurator;
+import ch.qos.logback.core.util.StatusPrinter;
+
+import com.fasheng.service.service.interfaces.UserService;
 
 /**
- * @author lenovo 2011-10-31 上午1:01:46
- * 
+ * @author lenovo 2011-10-31 1:01:46
  */
 @ContextConfiguration(locations = { "classpath:bean/sys-config.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
-@DirtiesContext
 public class CommonServiceTest {
 
-	// @Autowired
-	@Resource
-	protected UserService userService;
+    // @Autowired
+    @Resource
+    private UserService userService;
 
-	public final void setFooService(UserService userService) {
-		this.userService = userService;
-	}
+    @Test
+    public void testLog() {
+        //        Logger logger = (Logger) LoggerFactory.getLogger("com.service");
+        //        logger.setLevel(Level.INFO);
+        //        logger.warn("Low fuel level.");
+        //        logger.debug("Starting search for nearest gas station.");
 
-	@Test
-	public final void testSelectUsingReflection() {
-		User user = new User();
-		user.setId(1);
-		user = userService.findUserById(user);
-		assertNotNull(user);
-		assertEquals("C.Ronaldo", user.getName());
-	}
+        LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
 
-	@Test
-	public void testSelectUsingDom4jParser() {
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
-				"sys-config.xml");
+        JoranConfigurator configurator = new JoranConfigurator();
+        configurator.setContext(context);
+        // Call context.reset() to clear any previous configuration, e.g. default 
+        // configuration. For multi-step configuration, omit calling context.reset().
+        context.reset();
+        //configurator.doConfigure(args[0]);
+        StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+    }
 
-		UserService service = (UserService) ctx.getBean("userService");
-
-		User user = new User();
-		user.setId(1);
-
-		user = service.findUserById(user);
-		assertNotNull(user);
-		assertEquals("gosling", user.getName());
-
-		ctx.destroy();
-	}
+    @Test
+    public void testSelectUsingDom4jParser() {
+        //        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("sys-config.xml");
+        //        System.out.println(ctx.getBean("userService"));
+        //        ctx.destroy();
+        Assert.assertNotNull(userService);
+    }
 }

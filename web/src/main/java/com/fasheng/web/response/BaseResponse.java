@@ -1,6 +1,5 @@
 package com.fasheng.web.response;
 
-import com.alibaba.fastjson.JSON;
 
 /**
  * 服务端api返回基类
