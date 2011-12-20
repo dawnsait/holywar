@@ -265,6 +265,11 @@
 			<version>2.7.0</version>
 		</dependency>
 		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		<dependency>
 			<groupId>com.googlecode.jmockit</groupId>
 			<artifactId>jmockit</artifactId>
 			<version>0.999.8</version>
