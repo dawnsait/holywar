@@ -11,18 +11,16 @@
 package com.fasheng.common.constants;
 
 /**
- * TODO Comment of ResponseCodeEnum
- * 
  * @author ZY
  */
 public enum ResponseCodeEnum {
 
     SUCCESS(1000, "OK"),
     DB_ERROR(2000, "db error");
-    
-    Integer code;
-    String  description;
-    
+
+    private Integer code;
+    private String  description;
+
     /**
      * @param code
      * @param description
@@ -31,7 +29,7 @@ public enum ResponseCodeEnum {
         this.code = code;
         this.description = description;
     }
-    
+
     /**
      * @return the code
      */
