@@ -5,25 +5,24 @@
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %level %logger %caller{2} - %msg%n
-			</pattern>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %level %logger - %msg%n</pattern>
 		</encoder>
 	</appender>
 
-	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-		<file>log_test/fasheng-all.log</file>
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/jetty.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>jetty_%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
 		<encoder>
-			<pattern>%date %level [%thread] %logger{100} [%file:%line] %msg%n
-			</pattern>
+			<pattern>%-4relative [%thread] %-5level %logger - %msg%n</pattern>
 		</encoder>
 	</appender>
 
-	<logger name="com.fasheng" additivity="false">
-		<appender-ref ref="FILE" />
-	</logger>
-
-	<root level="INFO">
+	<root level="info">
 		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
 	</root>
 
 </configuration>  

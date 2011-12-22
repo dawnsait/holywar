@@ -20,11 +20,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>cli</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
 			<artifactId>common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -53,13 +48,37 @@
 		<plugins>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<version>${jetty-version}</version>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.0.1.v20110908</version>
 				<configuration>
+					<webApp>${basedir}/target/fasheng.war</webApp>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<stopKey>messi</stopKey>
 					<stopPort>9999</stopPort>
+					<systemProperties>
+						<systemProperty>
+							<name>logback.configurationFile</name>
+							<value>./src/main/resources/logback.xml</value>
+						</systemProperty>
+					</systemProperties>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>ch.qos.logback</groupId>
+						<artifactId>logback-classic</artifactId>
+						<version>1.0.0</version>
+					</dependency>
+					<dependency>
+						<groupId>ch.qos.logback</groupId>
+						<artifactId>logback-access</artifactId>
+						<version>1.0.0</version>
+					</dependency>
+					<dependency>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-api</artifactId>
+						<version>1.6.1</version>
+					</dependency>
+				</dependencies>
 				<executions>
 					<execution>
 						<id>start-jetty</id>

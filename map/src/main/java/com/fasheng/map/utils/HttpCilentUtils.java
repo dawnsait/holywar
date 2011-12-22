@@ -51,7 +51,7 @@ public class HttpCilentUtils {
         String domain = "http://ditu.google.cn";
         String api = "/maps/api/geocode/json?";
         String[] paramKey = { "address", "sensor" };
-        String[] paramValue = { "网商路699号", "true" };
+        String[] paramValue = { "google", "true" };
 
         String params = "";
         for (int i = 0; i < paramKey.length; i++) {

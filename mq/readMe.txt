@@ -8,3 +8,9 @@
 (1) 进入mq模块中的rabbitmq_server-2.7.0下的sbin目录，运行 rabbitmq-plugins enable rabbitmq_management。插件激活后，需要
 重新安装服务，依次执行命令序列：rabbitmq-service.bat stop rabbitmq-service.bat install rabbitmq-service.bat start。
 (2) 访问：http://127.0.0.1:55672/mgmt/              (guest/guest)
+
+
+
+
+http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-maven-plugin/
+http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin
