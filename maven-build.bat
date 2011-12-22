@@ -20,6 +20,8 @@ ECHO 4-编译打包,并执行测试
 ECHO 5-编译打包(解压war包),并执行测试
 ECHO 6-执行整个工程的测试
 ECHO 7-执行单个项目的测试
+ECHO 8-启动jetty(关闭调试器)
+ECHO 9-启动jetty(启动调试器)
 ECHO 0-退出菜单
 set isopt=
 set /p isopt=【选择命令】
@@ -30,9 +32,11 @@ if /i "%isopt%"=="4" goto mvn_install_with_test
 if /i "%isopt%"=="5" goto mvn_install_with_test_unzip_war
 if /i "%isopt%"=="6" goto mvn_all_test
 if /i "%isopt%"=="7" goto mvn_project_test
+if /i "%isopt%"=="8" goto mvn_jetty
+if /i "%isopt%"=="9" goto mvn_jetty_debug
 if /i "%isopt%"=="0" goto exit
 
-echo "无效选项，请选择(0-7)"
+echo "无效选项，请选择(0-9)"
 goto mvn_command
 
 :mvn_eclipse
@@ -88,7 +92,17 @@ goto mvn_command
 	echo 开始执行单个项目的测试
 	call mvn clean test
 	goto mvn_end
-	
+:mvn_jetty
+	cd %PROJECT_HOME%\web
+	echo 当前路径为%cd%
+	echo 启动jetty容器
+	call mvn jetty:run 
+:mvn_jetty_debug
+    cd %PROJECT_HOME%\web
+	echo 当前路径为%cd%
+	echo debug模式启动jetty容器
+	set MAVEN_OPTS=-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=52000,server=y,suspend=n
+	call mvn jetty:run
 :mvn_end
 cd %PROJECT_HOME%
 pause
