@@ -36,7 +36,7 @@
 		<project.build.level>1.6</project.build.level>
 
 		<org.springframework.version>3.0.6.RELEASE</org.springframework.version>
-		<slf4j.version>1.6.1</slf4j.version>
+		<slf4j.version>1.6.4</slf4j.version>
 		<logback.version>1.0.0</logback.version>
 		<cobertura.report.format>xml</cobertura.report.format>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
