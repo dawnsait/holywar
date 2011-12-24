@@ -7,6 +7,10 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author lenovo 2011-12-24 下午2:41:50
+ * 
+ */
 public abstract class GenericsUtils {
 
 	public static Class<?> getSuperClassGenricType(Class<?> clazz, int index) {
