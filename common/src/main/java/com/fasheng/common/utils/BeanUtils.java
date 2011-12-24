@@ -30,23 +30,27 @@ import net.sf.cglib.core.ReflectUtils;
  */
 public abstract class BeanUtils {
 
-	public static void copyProperties(Object source, Class<?> target) {
+	public static Object copyProperties(Object source, Class<?> target) {
 		Assert.notNull(source, "Source must not be null");
 		Assert.notNull(target, "Target must not be null");
 		
+		Object targetObject = ReflectUtils.newInstance(target);
 		BeanCopier beanCopier = BeanCopier.create(source.getClass(), target,
 				false);
-		beanCopier.copy(source, ReflectUtils.newInstance(target), null);
+		beanCopier.copy(source, targetObject, null);
+		return targetObject;
 	}
 
-	public static void copyProperties(Object source, Class<?> target,
+	public static Object copyProperties(Object source, Class<?> target,
 			Converter converter) {
 		Assert.notNull(source, "Source must not be null");
 		Assert.notNull(target, "Target must not be null");
 		
+		Object targetObject = ReflectUtils.newInstance(target);
 		BeanCopier beanCopier = BeanCopier.create(source.getClass(), target,
 				true);
-		beanCopier.copy(source, ReflectUtils.newInstance(target), converter);
+		beanCopier.copy(source, targetObject, converter);
+		return targetObject;
 	}
 
 }
