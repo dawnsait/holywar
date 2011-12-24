@@ -35,4 +35,16 @@ public interface MessageDAO {
      * @mbggenerated Tue Dec 06 23:15:11 CST 2011
      */
     int updateByPrimaryKey(MessageDO record);
+    
+    /**
+     * 获取当前userId
+     * @return
+     */
+    int getCurrentUserId();
+    
+    /**
+     * 获取下一个userId
+     * @return
+     */
+    int getNextUserId();
 }
