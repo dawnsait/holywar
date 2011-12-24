@@ -15,8 +15,6 @@
  */
 package com.fasheng.common.utils;
 
-import java.io.IOException;
-
 import org.codehaus.jackson.JsonParser.Feature;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
@@ -44,7 +42,7 @@ public class JsonHelper {
     public static <T> String toJson(T object) {
         try {
             return getMapper().writeValueAsString(object);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             logger.error("To json string wrong,from {}", object);
         }
         return "";
@@ -53,7 +51,7 @@ public class JsonHelper {
     public static <T> T fromJson(String json, Class<T> clazz) {
         try {
             return getMapper().readValue(json, clazz);
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new IllegalStateException("From json string to object failed ", e);
         }
     }
