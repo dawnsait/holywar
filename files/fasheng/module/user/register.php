@@ -1,4 +1,5 @@
 <?php
+@session_start();
 include "../../env.php";
 include SRC_DIR."/common/my_smarty.class.php";
 include SRC_DIR."/common/global_function.php";

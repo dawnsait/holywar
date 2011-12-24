@@ -23,5 +23,9 @@
 </p> 
 </form> 
 </div>
+<div>
+	<a href="{$loginUrl}">新浪微博</a> <span style="color:#ccc;padding:0 5px">|</span>
+	
+</div>
 </body> 
 </html> 

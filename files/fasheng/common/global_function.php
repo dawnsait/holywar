@@ -6,7 +6,9 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
 
-
+/**
+ * 页面统一入口
+ */
 function run($className) {
    $obj = new $className;
    if($_GET == null && $_POST == null) {
@@ -20,6 +22,9 @@ function run($className) {
    } 
 }
 
+/**
+ * 调用json api
+ */
 function getHttpPostResult($url, $fields) {
 	$data = http_build_query($fields);
 
@@ -37,6 +42,19 @@ function getHttpPostResult($url, $fields) {
 	$result = file_get_contents($url, false, $context);
 
 	return $result;
+}
+
+/**
+ * 设置session, 超时时间以分为单位
+ */
+function setSession($key, $value, $expireTime=30) {
+	$seconds = $expireTime * 60;
+	session_set_cookie_params($seconds);
+	$_SESSION[$key] = $value;
+}
+
+function delSession($key) {
+	unset($_SESSION[$key]);
 }
 
 ?>
