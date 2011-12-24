@@ -43,16 +43,16 @@ public class UserController {
     PartnerUserService partnerUserService = DataServiceLocator.getPartnerUserService();
     UserService userService = DataServiceLocator.getUserService();
     
-    @RequestMapping(value="/register", method=RequestMethod.GET)
+    @RequestMapping(value="/register", method=RequestMethod.POST)
     @ResponseBody
     public String register(@RequestParam("requestInfo") String requestInfo, ModelMap model) {
         UserRequest userRequest = JSON.parseObject(requestInfo, UserRequest.class);
         UserDTO userDTO = UserHelper.buildUserDTO(userRequest);
-        int rows = userService.insert(userDTO);
+        userDTO = userService.insert(userDTO);
         UserResponse response = new UserResponse();
-        if(rows > 0) {
+        if(userDTO != null) {
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());
-            response.setMsg(ResponseCodeEnum.SUCCESS.getDescription());
+            response.setMsg(ResponseCodeEnum.SUCCESS.getDescription() + ", userId:" + userDTO.getUserId());
         } else {
             response.setCode(ResponseCodeEnum.DB_ERROR.getCode());
             response.setMsg(ResponseCodeEnum.DB_ERROR.getDescription());

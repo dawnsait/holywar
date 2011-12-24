@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50517
 File Encoding         : 65001
 
-Date: 2011-12-09 01:05:07
+Date: 2011-12-24 14:34:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3262,7 +3262,7 @@ CREATE TABLE `evaluation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` int(11) NOT NULL,
   `score` int(11) NOT NULL,
-  `auth_user_id` varchar(15) NOT NULL,
+  `auth_user_id` int(11) NOT NULL,
   `eval_user_id` varchar(15) NOT NULL,
   `msg_id` varchar(20) NOT NULL,
   `is_used` tinyint(4) NOT NULL,
@@ -3294,7 +3294,7 @@ CREATE TABLE `message` (
   `attach_file` varchar(50) DEFAULT NULL,
   `is_expired` tinyint(4) NOT NULL,
   `deleted_status` tinyint(4) NOT NULL,
-  `expire_date` datetime NOT NULL,
+  `expire_date` date NOT NULL,
   `region_type` varchar(20) NOT NULL,
   `region_id` int(11) DEFAULT NULL,
   `min_longitude` double DEFAULT NULL,
@@ -3339,7 +3339,7 @@ CREATE TABLE `partner_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(10) NOT NULL,
   `user_id` varchar(15) NOT NULL,
-  `partner_user_id` varchar(15) NOT NULL,
+  `partner_user_id` varchar(15) DEFAULT NULL,
   `partner_detail` varchar(500) DEFAULT NULL,
   `version` varchar(6) DEFAULT NULL,
   `access_token` varchar(256) DEFAULT NULL,
@@ -3348,11 +3348,12 @@ CREATE TABLE `partner_user` (
   `gmt_update` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `type_and_partner_user` (`type`,`partner_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of partner_user
 -- ----------------------------
+INSERT INTO `partner_user` VALUES ('1', 'sina-weibo', 'user_id...', null, null, 'V2', 'access token.......', null, '2011-12-18 13:36:47', '2011-12-18 13:36:47');
 
 -- ----------------------------
 -- Table structure for `province`
@@ -3404,6 +3405,23 @@ INSERT INTO `province` VALUES ('32', '香港特别行政区');
 INSERT INTO `province` VALUES ('8', '黑龙江省');
 
 -- ----------------------------
+-- Table structure for `sequence`
+-- ----------------------------
+DROP TABLE IF EXISTS `sequence`;
+CREATE TABLE `sequence` (
+  `name` varchar(50) NOT NULL,
+  `current_value` int(11) NOT NULL,
+  `increment` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sequence
+-- ----------------------------
+INSERT INTO `sequence` VALUES ('msg_id.seq', '20120000', '1');
+INSERT INTO `sequence` VALUES ('user_id.seq', '2012000011', '1');
+
+-- ----------------------------
 -- Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
@@ -3412,30 +3430,31 @@ CREATE TABLE `user` (
   `user_id` varchar(15) NOT NULL,
   `gmt_create` datetime NOT NULL,
   `gmt_update` datetime NOT NULL,
-  `user_name` varchar(20) NOT NULL,
-  `nick_name` varchar(40) NOT NULL,
+  `user_name` varchar(20) DEFAULT NULL,
+  `nick_name` varchar(40) DEFAULT NULL,
   `password` varchar(40) NOT NULL,
   `email` varchar(100) NOT NULL,
   `real_name` varchar(10) DEFAULT NULL,
   `first_name` varchar(20) DEFAULT NULL,
   `last_name` varchar(20) DEFAULT NULL,
   `portrait` varchar(100) DEFAULT NULL,
-  `mobile` varchar(20) NOT NULL,
+  `mobile` varchar(20) DEFAULT NULL,
   `telephone` varchar(20) DEFAULT NULL,
-  `status` varchar(10) NOT NULL,
-  `is_deleted` tinyint(4) NOT NULL,
-  `score` int(11) NOT NULL DEFAULT '0',
-  `degrade` varchar(10) NOT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  `is_deleted` tinyint(4) DEFAULT NULL,
+  `score` int(11) DEFAULT '0',
+  `degrade` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `user_name` (`user_name`),
-  UNIQUE KEY `nick_name` (`nick_name`),
   UNIQUE KEY `user_id` (`user_id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `user_name` (`user_name`),
+  UNIQUE KEY `nick_name` (`nick_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('1', '2012000011', '2011-12-24 14:32:41', '2011-12-24 14:32:41', null, null, 'e', 'e', null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `user_address`
@@ -3498,3 +3517,35 @@ CREATE TABLE `user_region_conern` (
 -- ----------------------------
 -- Records of user_region_conern
 -- ----------------------------
+
+-- ----------------------------
+-- Function structure for `currval`
+-- ----------------------------
+DROP FUNCTION IF EXISTS `currval`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `currval`(seq_name VARCHAR(50)) RETURNS int(11)
+BEGIN
+  DECLARE value INTEGER;
+  SET value = 0;
+  SELECT current_value INTO value
+  FROM sequence
+  WHERE name = seq_name;
+  RETURN value;
+END
+;;
+DELIMITER ;
+
+-- ----------------------------
+-- Function structure for `nextval`
+-- ----------------------------
+DROP FUNCTION IF EXISTS `nextval`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `nextval`(seq_name VARCHAR(50)) RETURNS int(11)
+BEGIN
+   UPDATE sequence
+   SET          current_value = current_value + increment
+   WHERE name = seq_name;
+   RETURN currval(seq_name);
+END
+;;
+DELIMITER ;

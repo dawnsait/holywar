@@ -1,5 +1,6 @@
 package com.fasheng.service.service.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int insert(UserDTO userDTO) {
+    public UserDTO insert(UserDTO userDTO) {
+        if(StringUtils.isBlank(userDTO.getUserId())) {
+            userDTO.setUserId(String.valueOf(userDAO.selectNextUserId()));
+        }
         UserDO userDO = UserHelper.convert2UserDO(userDTO);
         logger.info("Insert UserDO:{} success!", userDO);
-        return userDAO.insert(userDO);
+        int flag = userDAO.insert(userDO);
+        if(flag > 0) {
+            return userDTO;
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -41,6 +50,16 @@ public class UserServiceImpl implements UserService {
     public int updateByPrimaryKey(UserDTO userDTO) {
         UserDO userDO = UserHelper.convert2UserDO(userDTO);
         return userDAO.updateByPrimaryKey(userDO);
+    }
+
+    @Override
+    public int getCurrentUserId() {
+        return userDAO.selectCurrentUserId();
+    }
+
+    @Override
+    public int getNextUserId() {
+        return userDAO.selectNextUserId();
     }
 
 }
