@@ -38,6 +38,7 @@ public abstract class BeanUtils {
 		BeanCopier beanCopier = BeanCopier.create(source.getClass(), target,
 				false);
 		beanCopier.copy(source, targetObject, null);
+		
 		return targetObject;
 	}
 
@@ -50,6 +51,7 @@ public abstract class BeanUtils {
 		BeanCopier beanCopier = BeanCopier.create(source.getClass(), target,
 				true);
 		beanCopier.copy(source, targetObject, converter);
+		
 		return targetObject;
 	}
 
