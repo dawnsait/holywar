@@ -1,5 +1,6 @@
 package com.fasheng.service.dao;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -27,6 +28,12 @@ public class UserDAOTest extends AbstractJUnit4SpringContextTests {
 //		userDO.setEmail("minbing@aaa.com8");
 //		userDO.setFirstName("bing");
 //		userDAO.insert(userDO);
+	}
+	
+	@Test
+	public void testCurrentUserId() {
+	    Assert.assertNotNull(userDAO.selectCurrentUserId());
+        Assert.assertNotNull(userDAO.selectNextUserId());
 	}
 
 }
