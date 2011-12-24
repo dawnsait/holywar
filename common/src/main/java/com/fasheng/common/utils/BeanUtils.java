@@ -21,12 +21,19 @@ import net.sf.cglib.core.Converter;
 import net.sf.cglib.core.ReflectUtils;
 
 /**
+ * 高性能JavaBean属性拷贝工具类
+ * 
  * @author lenovo 2011-12-24 下午3:58:02
+ * 
+ * @see org.springframework.beans.BeanUtils
  * 
  */
 public abstract class BeanUtils {
 
 	public static void copyProperties(Object source, Class<?> target) {
+		Assert.notNull(source, "Source must not be null");
+		Assert.notNull(target, "Target must not be null");
+		
 		BeanCopier beanCopier = BeanCopier.create(source.getClass(), target,
 				false);
 		beanCopier.copy(source, ReflectUtils.newInstance(target), null);
@@ -34,6 +41,9 @@ public abstract class BeanUtils {
 
 	public static void copyProperties(Object source, Class<?> target,
 			Converter converter) {
+		Assert.notNull(source, "Source must not be null");
+		Assert.notNull(target, "Target must not be null");
+		
 		BeanCopier beanCopier = BeanCopier.create(source.getClass(), target,
 				true);
 		beanCopier.copy(source, ReflectUtils.newInstance(target), converter);
