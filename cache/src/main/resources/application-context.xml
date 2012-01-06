@@ -31,4 +31,10 @@
             </list>
         </constructor-arg>
     </bean>
+    
+    <context:component-scan base-package="com.fasheng.cache.service"
+		use-default-filters="false">
+		<context:include-filter type="regex"
+			expression="com.fasheng.cache.service.impl..*" />
+	</context:component-scan>
 </beans>
