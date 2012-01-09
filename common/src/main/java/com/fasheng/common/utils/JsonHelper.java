@@ -22,7 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author vongosling.fengj 2011-12-20 03:54:56
+ * @author vongosling 2011-12-20 03:54:56
  */
 public class JsonHelper {
 
