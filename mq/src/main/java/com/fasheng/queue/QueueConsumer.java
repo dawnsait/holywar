@@ -34,41 +34,41 @@ public class QueueConsumer {
     protected boolean               persistence     = true;
     protected String                persistencePath = System.getProperty("java.io.tmpdir")
                                                             + File.separator + "queue";
-    protected Object                persistenceLock = new Object();                       //ÓÃÓÚÔÚbackupÓërestore¼äµÈ´ıµÄËø.
+    protected Object                persistenceLock = new Object();                       //ç”¨äºåœ¨backupä¸restoreé—´ç­‰å¾…çš„é”.
 
     protected BlockingQueue<Object> queue;
     protected ExecutorService       executor;
 
     /**
-     * ÈÎÎñËùÏû·ÑµÄ¶ÓÁĞÃû³Æ.
+     * ä»»åŠ¡æ‰€æ¶ˆè´¹çš„é˜Ÿåˆ—åç§°.
      */
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
 
     /**
-     * Í£Ö¹ÈÎÎñÊ±×î¶àµÈ´ıµÄÊ±¼ä, µ¥Î»ÎªºÁÃë.
+     * åœæ­¢ä»»åŠ¡æ—¶æœ€å¤šç­‰å¾…çš„æ—¶é—´, å•ä½ä¸ºæ¯«ç§’.
      */
     public void setShutdownTimeout(int shutdownTimeout) {
         this.shutdownTimeout = shutdownTimeout;
     }
 
     /**
-     * ÔÚJVM¹Ø±ÕÊ±ÊÇ·ñĞèÒª³Ö¾Ã»¯Î´Íê³ÉµÄÏûÏ¢µ½ÎÄ¼ş.
+     * åœ¨JVMå…³é—­æ—¶æ˜¯å¦éœ€è¦æŒä¹…åŒ–æœªå®Œæˆçš„æ¶ˆæ¯åˆ°æ–‡ä»¶.
      */
     public void setPersistence(boolean persistence) {
         this.persistence = persistence;
     }
 
     /**
-     * ÏµÍ³¹Ø±ÕÊ±½«¶ÓÁĞÖĞÎ´´¦ÀíµÄÏûÏ¢³Ö¾Ã»¯µ½ÎÄ¼şµÄÄ¿Â¼,Ä¬ÈÏÎªÏµÍ³ÁÙÊ±ÎÄ¼ş¼ĞÏÂµÄqueueÄ¿Â¼.
+     * ç³»ç»Ÿå…³é—­æ—¶å°†é˜Ÿåˆ—ä¸­æœªå¤„ç†çš„æ¶ˆæ¯æŒä¹…åŒ–åˆ°æ–‡ä»¶çš„ç›®å½•,é»˜è®¤ä¸ºç³»ç»Ÿä¸´æ—¶æ–‡ä»¶å¤¹ä¸‹çš„queueç›®å½•.
      */
     public void setPersistencePath(String persistencePath) {
         this.persistencePath = persistencePath;
     }
 
     /**
-     * ÈÎÎñ³õÊ¼»¯º¯Êı.
+     * ä»»åŠ¡åˆå§‹åŒ–å‡½æ•°.
      */
     //@PostConstruct
     public void start() throws IOException, ClassNotFoundException, InterruptedException {
@@ -87,7 +87,7 @@ public class QueueConsumer {
     }
 
     /**
-     * ÈÎÎñ½áÊøº¯Êı.
+     * ä»»åŠ¡ç»“æŸå‡½æ•°.
      */
     //@PreDestroy
     public void stop() throws IOException {
@@ -104,7 +104,7 @@ public class QueueConsumer {
     }
 
     /**
-     * ±£´æ¶ÓÁĞÖĞµÄÏûÏ¢µ½ÎÄ¼ş.
+     * ä¿å­˜é˜Ÿåˆ—ä¸­çš„æ¶ˆæ¯åˆ°æ–‡ä»¶.
      */
     protected void backupQueue() throws IOException {
         List<Object> list = Lists.newArrayList();
@@ -118,7 +118,7 @@ public class QueueConsumer {
                 for (Object message : list) {
                     oos.writeObject(message);
                 }
-                logger.info("¶ÓÁĞ{}ÒÑ³Ö¾Ã»¯{}¸öÏûÏ¢µ½{}", new Object[] { queueName, list.size(),
+                logger.info("é˜Ÿåˆ—{}å·²æŒä¹…åŒ–{}ä¸ªæ¶ˆæ¯åˆ°{}", new Object[] { queueName, list.size(),
                         file.getAbsolutePath() });
             } finally {
                 if (oos != null) {
@@ -126,12 +126,12 @@ public class QueueConsumer {
                 }
             }
         } else {
-            logger.debug("¶ÓÁĞ{}Îª¿Õ,²»ĞèÒª³Ö¾Ã»¯ .", queueName);
+            logger.debug("é˜Ÿåˆ—{}ä¸ºç©º,ä¸éœ€è¦æŒä¹…åŒ– .", queueName);
         }
     }
 
     /**
-     * ÔØÈë³Ö¾Ã»¯ÎÄ¼şÖĞµÄÏûÏ¢µ½¶ÓÁĞ.
+     * è½½å…¥æŒä¹…åŒ–æ–‡ä»¶ä¸­çš„æ¶ˆæ¯åˆ°é˜Ÿåˆ—.
      */
     protected void restoreQueue() throws ClassNotFoundException, IOException, InterruptedException {
         ObjectInputStream ois = null;
@@ -150,7 +150,7 @@ public class QueueConsumer {
                         break;
                     }
                 }
-                logger.info("¶ÓÁĞ{}ÒÑ´Ó{}ÖĞ»Ö¸´{}¸öÏûÏ¢.", new Object[] { queueName, file.getAbsolutePath(),
+                logger.info("é˜Ÿåˆ—{}å·²ä»{}ä¸­æ¢å¤{}ä¸ªæ¶ˆæ¯.", new Object[] { queueName, file.getAbsolutePath(),
                         count });
             } finally {
                 if (ois != null) {
@@ -159,13 +159,13 @@ public class QueueConsumer {
             }
             file.delete();
         } else {
-            logger.debug("¶ÓÁĞ{}µÄ³Ö¾Ã»¯ÎÄ¼ş{}²»´æÔÚ", queueName, file.getAbsolutePath());
+            logger.debug("é˜Ÿåˆ—{}çš„æŒä¹…åŒ–æ–‡ä»¶{}ä¸å­˜åœ¨", queueName, file.getAbsolutePath());
         }
     }
 
     /**
-     * »ñÈ¡³Ö¾Ã»¯ÎÄ¼şÂ·¾¶. ³Ö¾Ã»¯ÎÄ¼şÄ¬ÈÏÂ·¾¶Îªjava.io.tmpdir/queue/¶ÓÁĞÃû.
-     * Èç¹ûjava.io.tmpdir/queue/Ä¿Â¼²»´æÔÚ,»á½øĞĞ´´½¨.
+     * è·å–æŒä¹…åŒ–æ–‡ä»¶è·¯å¾„. æŒä¹…åŒ–æ–‡ä»¶é»˜è®¤è·¯å¾„ä¸ºjava.io.tmpdir/queue/é˜Ÿåˆ—å.
+     * å¦‚æœjava.io.tmpdir/queue/ç›®å½•ä¸å­˜åœ¨,ä¼šè¿›è¡Œåˆ›å»º.
      */
     protected File getPersistenceDir() {
         File parentDir = new File(persistencePath + File.separator);
@@ -176,7 +176,7 @@ public class QueueConsumer {
     }
 
     /**
-     * »ñÈ¡³Ö¾Ã»¯ÎÄ¼şµÄÃû³Æ,Ä¬ÈÏÎªqueueName,¿ÉÖØÔØ.
+     * è·å–æŒä¹…åŒ–æ–‡ä»¶çš„åç§°,é»˜è®¤ä¸ºqueueName,å¯é‡è½½.
      */
     protected String getPersistenceFileName() {
         return queueName;

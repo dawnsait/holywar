@@ -17,7 +17,7 @@ import com.google.common.collect.MapMaker;
 @ManagedResource(objectName = QueuesHolder.QUEUEHOLDER_MBEAN_NAME, description = "Queues Holder Bean")
 public class QueuesHolder {
     /**
-     * QueueManager×¢²áµÄÃû³Æ.
+     * QueueManageræ³¨å†Œçš„åç§°.
      */
     public static final String                          QUEUEHOLDER_MBEAN_NAME = "Fasheng:type=QueueManagement,name=queueHolder";
 
@@ -25,12 +25,12 @@ public class QueuesHolder {
     private static ConcurrentMap<String, BlockingQueue> queueMap               = new MapMaker()
                                                                                        .concurrencyLevel(
                                                                                                32)
-                                                                                       .makeMap();                               //ÏûÏ¢¶ÓÁĞ
+                                                                                       .makeMap();                               //æ¶ˆæ¯é˜Ÿåˆ—
 
     private static int                                  queueSize              = Integer.MAX_VALUE;
 
     /**
-     * ¸ù¾İqueueName»ñµÃÏûÏ¢¶ÓÁĞµÄ¾²Ì¬º¯Êı. ÈçÏûÏ¢¶ÓÁĞ»¹²»´æÔÚ, »á×Ô¶¯½øĞĞ´´½¨.
+     * æ ¹æ®queueNameè·å¾—æ¶ˆæ¯é˜Ÿåˆ—çš„é™æ€å‡½æ•°. å¦‚æ¶ˆæ¯é˜Ÿåˆ—è¿˜ä¸å­˜åœ¨, ä¼šè‡ªåŠ¨è¿›è¡Œåˆ›å»º.
      */
     @SuppressWarnings("unchecked")
     public static <T> BlockingQueue<T> getQueue(String queueName) {
@@ -39,7 +39,7 @@ public class QueuesHolder {
         if (queue == null) {
             BlockingQueue<T> newQueue = new LinkedBlockingQueue<T>(queueSize);
 
-            //Èç¹ûÖ®Ç°ÏûÏ¢¶ÓÁĞ»¹²»´æÔÚ,·ÅÈëĞÂ¶ÓÁĞ²¢·µ»ØNull.·ñÔò·µ»ØÖ®Ç°µÄÖµ.
+            //å¦‚æœä¹‹å‰æ¶ˆæ¯é˜Ÿåˆ—è¿˜ä¸å­˜åœ¨,æ”¾å…¥æ–°é˜Ÿåˆ—å¹¶è¿”å›Null.å¦åˆ™è¿”å›ä¹‹å‰çš„å€¼.
             queue = queueMap.putIfAbsent(queueName, newQueue);
             if (queue == null) {
                 queue = newQueue;
@@ -49,7 +49,7 @@ public class QueuesHolder {
     }
 
     /**
-     * ¸ù¾İqueueName»ñµÃÏûÏ¢¶ÓÁĞÖĞÎ´´¦ÀíÏûÏ¢µÄÊıÁ¿,Ö§³Ö»ùÓÚJMX²éÑ¯.
+     * æ ¹æ®queueNameè·å¾—æ¶ˆæ¯é˜Ÿåˆ—ä¸­æœªå¤„ç†æ¶ˆæ¯çš„æ•°é‡,æ”¯æŒåŸºäºJMXæŸ¥è¯¢.
      */
     @ManagedOperation(description = "Get message count in queue")
     @ManagedOperationParameters( { @ManagedOperationParameter(name = "queueName", description = "Queue name") })
@@ -58,7 +58,7 @@ public class QueuesHolder {
     }
 
     /**
-     * ÉèÖÃÃ¿¸ö¶ÓÁĞµÄ×î´ó³¤¶È, Ä¬ÈÏÎªInteger×î´óÖµ, ÉèÖÃÊ±²»¸Ä±äÒÑ´´½¨¶ÓÁĞµÄ×î´ó³¤¶È.
+     * è®¾ç½®æ¯ä¸ªé˜Ÿåˆ—çš„æœ€å¤§é•¿åº¦, é»˜è®¤ä¸ºIntegeræœ€å¤§å€¼, è®¾ç½®æ—¶ä¸æ”¹å˜å·²åˆ›å»ºé˜Ÿåˆ—çš„æœ€å¤§é•¿åº¦.
      */
     public void setQueueSize(int queueSize) {
         QueuesHolder.queueSize = queueSize; //NOSONAR
