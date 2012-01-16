@@ -11,7 +11,7 @@ import com.fasheng.queue.event.AsyncEvent;
 import com.fasheng.queue.event.sender.AsyncSender;
 
 /**
- * @author vongosling 2012-1-9 05:08:35
+ * @author von gosling 2012-1-9 05:08:35
  */
 public class MQEventPublisher implements EventPublisher {
     private static final Logger logger = LoggerFactory.getLogger(MQEventPublisher.class);

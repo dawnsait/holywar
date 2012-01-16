@@ -7,7 +7,7 @@ import net.sf.cglib.core.ReflectUtils;
 /**
  * 高性能JavaBean属性拷贝工具类
  * 
- * @author vongosling 2011-12-24 3:58:02
+ * @author von gosling 2011-12-24 3:58:02
  * 
  * @see org.springframework.beans.BeanUtils
  * 

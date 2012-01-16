@@ -16,7 +16,7 @@ import com.fasheng.queue.event.listener.EventListener;
 import com.google.common.collect.Sets;
 
 /**
- * @author vongosling 2012-1-9 04:45:10
+ * @author von gosling 2012-1-9 04:45:10
  */
 public abstract class AbstractEventDispatcher implements EventDispatcher, ApplicationContextAware {
     private static final Logger         logger         = LoggerFactory

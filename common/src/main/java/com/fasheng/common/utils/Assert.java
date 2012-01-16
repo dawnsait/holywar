@@ -12,7 +12,7 @@ import java.util.Map;
  * notice: I strongly recommend the isTrue method,very versatile.
  * </pre>
  * 
- * @author vongosling
+ * @author von gosling
  */
 public abstract class Assert {
     /**

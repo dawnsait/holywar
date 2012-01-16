@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author vongosling 2012-1-9 01:38:39
+ * @author von gosling 2012-1-9 01:38:39
  */
 public class ThreadUtils {
     private static final Logger logger = LoggerFactory.getLogger(ThreadUtils.class);

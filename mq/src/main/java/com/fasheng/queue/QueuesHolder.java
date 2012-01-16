@@ -12,7 +12,7 @@ import org.springframework.jmx.export.annotation.ManagedResource;
 import com.google.common.collect.MapMaker;
 
 /**
- * @author vongosling 2012-1-9 02:33:19
+ * @author von gosling 2012-1-9 02:33:19
  */
 @ManagedResource(objectName = QueuesHolder.QUEUEHOLDER_MBEAN_NAME, description = "Queues Holder Bean")
 public class QueuesHolder {

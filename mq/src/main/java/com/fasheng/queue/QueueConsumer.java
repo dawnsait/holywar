@@ -23,7 +23,7 @@ import com.fasheng.common.utils.ThreadUtils.DistinguishableThreadFactory;
 import com.google.common.collect.Lists;
 
 /**
- * @author vongosling 2012-1-9 02:32:18
+ * @author von gosling 2012-1-9 02:32:18
  */
 public class QueueConsumer {
     protected Logger                logger          = LoggerFactory.getLogger(getClass());

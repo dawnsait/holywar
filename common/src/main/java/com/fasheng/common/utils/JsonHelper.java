@@ -1,18 +1,3 @@
-/**
- * Project: common
- * 
- * File Created at 2011-12-20
- * $Id$
- * 
- * Copyright 2011 Alibaba.com Corporation Limited.
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of
- * Alibaba Company. ("Confidential Information").  You shall not
- * disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license agreement you entered into
- * with Alibaba.com.
- */
 package com.fasheng.common.utils;
 
 import org.codehaus.jackson.JsonParser.Feature;
@@ -22,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author vongosling 2011-12-20 03:54:56
+ * @author von gosling 2011-12-20 03:54:56
  */
 public class JsonHelper {
 

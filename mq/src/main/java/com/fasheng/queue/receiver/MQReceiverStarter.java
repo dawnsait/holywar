@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * @author vongosling 2012-1-9 05:20:12
+ * @author von gosling 2012-1-9 05:20:12
  */
 public class MQReceiverStarter extends AbstractMQReceiverStarter {
     private static final Logger logger = LoggerFactory.getLogger(MQReceiverStarter.class);

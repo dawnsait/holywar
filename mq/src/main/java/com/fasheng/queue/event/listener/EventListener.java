@@ -5,7 +5,7 @@ import com.fasheng.queue.event.AsyncEvent;
 /**
  * Interface for async event listenser.
  * 
- * @author vongosling 2012-1-9 04:45:45
+ * @author von gosling 2012-1-9 04:45:45
  */
 public interface EventListener {
 

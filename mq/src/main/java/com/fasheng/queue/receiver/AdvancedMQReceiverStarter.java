@@ -22,7 +22,7 @@ import com.google.common.collect.Collections2;
  * Host ip is a whitelist, if it's empty, those receivers will start on every
  * host. if the ip white list contains 127.0.0.1, all host can start.
  * 
- * @author vongosling 2012-1-9 05:17:44
+ * @author von gosling 2012-1-9 05:17:44
  */
 public class AdvancedMQReceiverStarter extends AbstractMQReceiverStarter {
     private static final Logger logger       = LoggerFactory

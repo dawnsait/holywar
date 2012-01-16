@@ -9,7 +9,7 @@ import com.fasheng.queue.event.AsyncEvent;
 import com.fasheng.queue.event.dispatcher.EventDispatcher;
 
 /**
- * @author vongosling.fengj 2012-1-9 05:12:24
+ * @author von gosling 2012-1-9 05:12:24
  */
 public class EventProcessWorker implements AsyncWorker {
     private static final Logger logger = LoggerFactory.getLogger(EventProcessWorker.class);

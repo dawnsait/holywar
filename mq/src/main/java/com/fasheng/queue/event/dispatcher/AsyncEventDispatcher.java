@@ -29,7 +29,7 @@ import com.fasheng.queue.event.listener.EventListener;
  * all listenrs which already registered. <br/>
  * <b>Notice, handle unexpected errors is the responsiblity of listeners.</b>
  * 
- * @author vongosling 2012-1-9 05:00:26
+ * @author von gosling 2012-1-9 05:00:26
  */
 public class AsyncEventDispatcher extends AbstractEventDispatcher {
     private static final Logger logger = LoggerFactory.getLogger(AsyncEventDispatcher.class);

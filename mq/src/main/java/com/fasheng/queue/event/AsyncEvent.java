@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * AsyncEvent,can be transfer out of jvm.
  * 
- * @author vongosling 2012-1-9 04:46:24
+ * @author von gosling 2012-1-9 04:46:24
  */
 public abstract class AsyncEvent implements Event {
     private static final long serialVersionUID = -952028962275098567L;

@@ -24,7 +24,7 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 
 /**
- * @author vongosling.fengj 2012-1-9 05:14:19
+ * @author von gosling 2012-1-9 05:14:19
  */
 public abstract class AbstractMQReceiverStarter implements ApplicationListener<ApplicationEvent>,
         ApplicationContextAware {

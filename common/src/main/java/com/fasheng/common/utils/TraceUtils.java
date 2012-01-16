@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.MDC;
 
 /**
- * @author vongosling.fengj 2012-1-9 03:17:09
+ * @author von gosling 2012-1-9 03:17:09
  */
 public class TraceUtils {
 

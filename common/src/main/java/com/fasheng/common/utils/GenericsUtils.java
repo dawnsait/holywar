@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author vongosling 2011-12-24 2:41:50
+ * @author von gosling 2011-12-24 2:41:50
  * 
  */
 public abstract class GenericsUtils {
