@@ -12,12 +12,17 @@
 		<relativePath>../all</relativePath>
 	</parent>
 
+	<groupId>com.fasheng</groupId>
 	<artifactId>web</artifactId>
 	<packaging>war</packaging>
 	<name>web</name>
 	<version>1.0.0</version>
 
 	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>common</artifactId>

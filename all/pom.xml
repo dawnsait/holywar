@@ -35,7 +35,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.level>1.6</project.build.level>
 
-		<org.springframework.version>3.0.6.RELEASE</org.springframework.version>
+		<org.springframework.version>3.1.0.RELEASE</org.springframework.version>
 		<slf4j.version>1.6.4</slf4j.version>
 		<logback.version>1.0.0</logback.version>
 		<cobertura.report.format>xml</cobertura.report.format>
@@ -44,327 +44,337 @@
 		<jetty-version>6.1.22</jetty-version>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.18</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore</artifactId>
-			<version>4.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpmime</artifactId>
-			<version>4.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient-cache</artifactId>
-			<version>4.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>1.8.3</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-math</artifactId>
-			<version>2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-cli</groupId>
-			<artifactId>commons-cli</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>1.7.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-access</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>2.2.2</version>
-		</dependency>
-		<!--
-			Aspect Oriented Programming (AOP) Framework (depends on spring-core,
-			spring-beans) Define this if you use Spring AOP APIs
-			(org.springframework.aop.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-asm</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Bean Factory and JavaBeans utilities (depends on spring-core) Define
-			this if you use Spring Bean APIs (org.springframework.beans.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Application Context (depends on spring-core, spring-expression,
-			spring-aop, spring-beans) This is the central artifact for Spring's
-			Dependency Injection Container and is generally always defined
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${org.springframework.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!--
-			Various Application Context utilities, including EhCache, JavaMail,
-			Quartz, and Freemarker integration Define this if you need any of
-			these integrations
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Core utilities used by other modules. Define this if you use Spring
-			Utility APIs (org.springframework.core.*/org.springframework.util.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Expression Language (depends on spring-core) Define this if you use
-			Spring Expression APIs (org.springframework.expression.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-expression</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			JDBC Data Access Library (depends on spring-core, spring-beans,
-			spring-context, spring-tx) Define this if you use Spring's
-			JdbcTemplate API (org.springframework.jdbc.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jms</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA, and
-			iBatis. (depends on spring-core, spring-beans, spring-context,
-			spring-tx) Define this if you need ORM (org.springframework.orm.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Object-to-XML Mapping (OXM) abstraction and integration with JAXB,
-			JiBX, Castor, XStream, and XML Beans. (depends on spring-core,
-			spring-beans, spring-context) Define this if you need OXM
-			(org.springframework.oxm.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-oxm</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Transaction Management Abstraction (depends on spring-core,
-			spring-beans, spring-aop, spring-context) Define this if you use
-			Spring Transactions or DAO Exception Hierarchy
-			(org.springframework.transaction.*/org.springframework.dao.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Web application development utilities applicable to both Servlet and
-			Portlet Environments (depends on spring-core, spring-beans,
-			spring-context) Define this if you use Spring MVC, or wish to use
-			Struts, JSF, or another web framework with Spring
-			(org.springframework.web.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Spring MVC for Servlet Environments (depends on spring-core,
-			spring-beans, spring-context, spring-web) Define this if you use
-			Spring MVC with a Servlet Container such as Apache Tomcat
-			(org.springframework.web.servlet.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Spring MVC for Portlet Environments (depends on spring-core,
-			spring-beans, spring-context, spring-web) Define this if you use
-			Spring MVC with a Portlet Container
-			(org.springframework.web.portlet.*)
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc-portlet</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
-		<!--
-			Support for testing Spring applications with tools such as JUnit and
-			TestNG This artifact is generally always defined with a 'test' scope
-			for the integration testing framework and unit testing stubs
-		-->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${org.springframework.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>3.0.6</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>1.0.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>10.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jodd</groupId>
-			<artifactId>jodd</artifactId>
-			<version>3.3</version>
-		</dependency>
-		<dependency>
-			<groupId>com.rabbitmq</groupId>
-			<artifactId>amqp-client</artifactId>
-			<version>2.7.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jasypt</groupId>
-			<artifactId>jasypt</artifactId>
-			<version>1.9.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.googlecode.jmockit</groupId>
-			<artifactId>jmockit</artifactId>
-			<version>0.999.8</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-core</artifactId>
-			<version>3.1</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.18</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>1.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>1.9.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>4.1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpcore</artifactId>
+				<version>4.1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpmime</artifactId>
+				<version>4.1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient-cache</artifactId>
+				<version>4.1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.8.3</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-math</artifactId>
+				<version>2.2</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-cli</groupId>
+				<artifactId>commons-cli</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>1.7.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-access</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+				<scope>provided</scope>
+				<optional>true</optional>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib-nodep</artifactId>
+				<version>2.2.2</version>
+			</dependency>
+			<!--
+				Aspect Oriented Programming (AOP) Framework (depends on spring-core,
+				spring-beans) Define this if you use Spring AOP APIs
+				(org.springframework.aop.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-asm</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Bean Factory and JavaBeans utilities (depends on spring-core) Define
+				this if you use Spring Bean APIs (org.springframework.beans.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Application Context (depends on spring-core, spring-expression,
+				spring-aop, spring-beans) This is the central artifact for Spring's
+				Dependency Injection Container and is generally always defined
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${org.springframework.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!--
+				Various Application Context utilities, including EhCache, JavaMail,
+				Quartz, and Freemarker integration Define this if you need any of
+				these integrations
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Core utilities used by other modules. Define this if you use Spring
+				Utility APIs (org.springframework.core.*/org.springframework.util.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Expression Language (depends on spring-core) Define this if you use
+				Spring Expression APIs (org.springframework.expression.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				JDBC Data Access Library (depends on spring-core, spring-beans,
+				spring-context, spring-tx) Define this if you use Spring's
+				JdbcTemplate API (org.springframework.jdbc.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jms</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA,
+				and iBatis. (depends on spring-core, spring-beans, spring-context,
+				spring-tx) Define this if you need ORM (org.springframework.orm.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Object-to-XML Mapping (OXM) abstraction and integration with JAXB,
+				JiBX, Castor, XStream, and XML Beans. (depends on spring-core,
+				spring-beans, spring-context) Define this if you need OXM
+				(org.springframework.oxm.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-oxm</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Transaction Management Abstraction (depends on spring-core,
+				spring-beans, spring-aop, spring-context) Define this if you use
+				Spring Transactions or DAO Exception Hierarchy
+				(org.springframework.transaction.*/org.springframework.dao.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Web application development utilities applicable to both Servlet and
+				Portlet Environments (depends on spring-core, spring-beans,
+				spring-context) Define this if you use Spring MVC, or wish to use
+				Struts, JSF, or another web framework with Spring
+				(org.springframework.web.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Spring MVC for Servlet Environments (depends on spring-core,
+				spring-beans, spring-context, spring-web) Define this if you use
+				Spring MVC with a Servlet Container such as Apache Tomcat
+				(org.springframework.web.servlet.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Spring MVC for Portlet Environments (depends on spring-core,
+				spring-beans, spring-context, spring-web) Define this if you use
+				Spring MVC with a Portlet Container
+				(org.springframework.web.portlet.*)
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc-portlet</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!--
+				Support for testing Spring applications with tools such as JUnit and
+				TestNG This artifact is generally always defined with a 'test' scope
+				for the integration testing framework and unit testing stubs
+			-->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>3.0.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>1.0.2</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>11.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>2.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jodd</groupId>
+				<artifactId>jodd</artifactId>
+				<version>3.3</version>
+			</dependency>
+			<dependency>
+				<groupId>com.rabbitmq</groupId>
+				<artifactId>amqp-client</artifactId>
+				<version>2.7.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jasypt</groupId>
+				<artifactId>jasypt</artifactId>
+				<version>1.9.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.googlecode.jmockit</groupId>
+				<artifactId>jmockit</artifactId>
+				<version>0.999.8</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.8.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.unitils</groupId>
+				<artifactId>unitils-core</artifactId>
+				<version>3.1</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
+		<!--  
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
+		-->
 		<plugins>
 			<!--
 				<plugin> <groupId>org.codehaus.mojo</groupId>
@@ -415,7 +425,6 @@
 				<format>${cobertura.report.format}</format> </formats>
 				</configuration> </plugin>
 			-->
-
 		</plugins>
 	</build>
 </project>

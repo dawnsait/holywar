@@ -9,6 +9,7 @@
 		<relativePath>../all</relativePath>
 	</parent>
 
+	<groupId>com.fasheng</groupId>
 	<artifactId>mq</artifactId>
 	<name>mq</name>
 	<version>1.0.0</version>
@@ -17,11 +18,15 @@
 		<dependency>
 			<groupId>com.rabbitmq</groupId>
 			<artifactId>amqp-client</artifactId>
-			<version>2.7.0</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>service</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

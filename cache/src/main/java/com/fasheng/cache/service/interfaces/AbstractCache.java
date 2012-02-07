@@ -93,11 +93,11 @@ public abstract class AbstractCache {
         return value;
     }
 
-    @SuppressWarnings("rawtypes")
+    @SuppressWarnings("unchecked")
     protected boolean hsetHash(String key, Map<String, String> hash) {
         ShardedJedis jedis = shardedJedisPool.getResource();
         try {
-            Iterator iter = hash.entrySet().iterator(); 
+            Iterator<?> iter = hash.entrySet().iterator(); 
             while (iter.hasNext()) { 
                 Map.Entry entry = (Map.Entry) iter.next(); 
                 String field = entry.getKey().toString(); 
