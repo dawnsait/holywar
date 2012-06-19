@@ -27,7 +27,6 @@ public class TestJedis extends AbstractJUnit4SpringContextTests {
         String key = "aaa";
 //        jedis.set(key, "bbbbbbbbbbbbbb"); 
 //        jedis.hset("aaa", "bbbb", "ccc");
-        Map<String, String> map = jedis.hgetAll("acd");
         System.out.println(jedis.get(key)); 
     }
     
@@ -40,8 +39,6 @@ public class TestJedis extends AbstractJUnit4SpringContextTests {
         map.put("fffffff3", "vvvvv3");
         map.put("fffffff4", "vvvvv4");
         userCache.putUser(userId, map);
-        Map<String, String> map2 = userCache.getUser(userId);
-        System.out.println(""); 
     }
 
 }

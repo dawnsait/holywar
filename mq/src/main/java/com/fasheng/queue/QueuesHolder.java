@@ -21,8 +21,8 @@ public class QueuesHolder {
      */
     public static final String                          QUEUEHOLDER_MBEAN_NAME = "Fasheng:type=QueueManagement,name=queueHolder";
 
-    @SuppressWarnings("unchecked")
-    private static ConcurrentMap<String, BlockingQueue> queueMap               = new MapMaker()
+    @SuppressWarnings("rawtypes")
+	private static ConcurrentMap<String, BlockingQueue> queueMap               = new MapMaker()
                                                                                        .concurrencyLevel(
                                                                                                32)
                                                                                        .makeMap();                               //消息队列

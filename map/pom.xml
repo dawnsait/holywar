@@ -9,12 +9,18 @@
 		<relativePath>../all</relativePath>
 	</parent>
 
-	<groupId>com.fasheng</groupId>
 	<artifactId>map</artifactId>
 	<name>map</name>
-	<version>1.0.0</version>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>

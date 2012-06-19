@@ -14,6 +14,7 @@ public abstract class AsyncEvent implements Event {
     private static final long serialVersionUID = -952028962275098567L;
 
     private final long        timestamp;
+    @SuppressWarnings("unused")
     private final String      uuid;
 
     public AsyncEvent() {

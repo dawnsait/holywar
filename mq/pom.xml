@@ -9,10 +9,8 @@
 		<relativePath>../all</relativePath>
 	</parent>
 
-	<groupId>com.fasheng</groupId>
 	<artifactId>mq</artifactId>
 	<name>mq</name>
-	<version>1.0.0</version>
 
 	<dependencies>
 		<dependency>
